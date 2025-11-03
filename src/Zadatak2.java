@@ -14,7 +14,7 @@ public class Zadatak2 {
         System.out.println("Unesite tekst:");
         String input = scanner.nextLine();
 
-        String[] inputRijeci = input.split("\\s");
+        String[] inputRijeci = input.split("\\s+");
 
         for (int i = inputRijeci.length-1; i >= 0; i--) {
             System.out.print(inputRijeci[i] + " ");
