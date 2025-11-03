@@ -20,10 +20,15 @@ public class Main {
         int znamenke = 0;
         int slova = 0;
         int znakovi = 0;
-        for (String znak : inputZnakovi) {
-            if (znak.matches("[A-Za-zćčžšđĆČŽŠĐ]")){
+        for (int i = 0; i < inputZnakovi.length; i++) {
+            if (inputZnakovi[i].matches("[A-Za-zćčžšđĆČŽŠĐ]")){
+                if (i >= 1) {
+                    if ((inputZnakovi[i].equals("ž")) && ((inputZnakovi[i-1].equals("d") || inputZnakovi[i-1].equals("D")))) {
+                        continue;
+                    }
+                }
             slova++;
-            } else if (znak.matches("[0-9]")){
+            } else if (inputZnakovi[i].matches("[0-9]")){
                 znamenke++;
             } else {
                 znakovi++;
