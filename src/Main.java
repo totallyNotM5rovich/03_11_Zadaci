@@ -21,7 +21,7 @@ public class Main {
         int slova = 0;
         int znakovi = 0;
         for (String znak : inputZnakovi) {
-            if (znak.matches("[A-Za-z]")){
+            if (znak.matches("[A-Za-zćčžšđĆČŽŠĐ]")){
             slova++;
             } else if (znak.matches("[0-9]")){
                 znamenke++;
@@ -31,7 +31,6 @@ public class Main {
         }
 
         System.out.printf("Uneseni tekst sadrzi:%nSlova: %d%nBrojevi: %d%nOstali znakovi: %d", slova, znamenke, znakovi);
-
 
     }
 }
