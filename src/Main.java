@@ -27,6 +27,11 @@ public class Main {
                         continue;
                     }
                 }
+                if (i >= 1) {
+                    if ((inputZnakovi[i].equals("j")) && ((inputZnakovi[i-1].equals("l") || inputZnakovi[i-1].equals("L")))) {
+                        continue;
+                    }
+                }
             slova++;
             } else if (inputZnakovi[i].matches("[0-9]")){
                 znamenke++;
