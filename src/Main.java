@@ -23,13 +23,17 @@ public class Main {
         for (int i = 0; i < inputZnakovi.length; i++) {
             if (inputZnakovi[i].matches("[A-Za-zćčžšđĆČŽŠĐ]")){
                 if (i >= 1) {
-                    if ((inputZnakovi[i].equals("ž")) && ((inputZnakovi[i-1].equals("d") || inputZnakovi[i-1].equals("D")))) {
-                        continue;
-                    }
-                }
-                if (i >= 1) {
-                    if ((inputZnakovi[i].equals("j")) && ((inputZnakovi[i-1].equals("l") || inputZnakovi[i-1].equals("L")))) {
-                        continue;
+                    switch (inputZnakovi[i]) {
+                        case "ž":
+                            if (inputZnakovi[i-1].equals("d") || inputZnakovi[i-1].equals("D")) {
+                                continue;
+                            }
+                        case "j":
+                            if (inputZnakovi[i-1].equals("l") || inputZnakovi[i-1].equals("L") || inputZnakovi[i-1].equals("n") || inputZnakovi[i-1].equals("N")) {
+                                continue;
+                            }
+                        default:
+                            break;
                     }
                 }
             slova++;
